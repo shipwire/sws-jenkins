@@ -73,3 +73,8 @@ RUN gem install capistrano \
         capistrano-laravel \
         capistrano-composer \
         capistrano-npm
+
+RUN apk add --no-cache bash gettext python groff less jq py-pip && \
+    apk add --no-cache --virtual=build-dependencies wget ca-certificates && \
+    apk del build-dependencies && \
+    pip install awscli

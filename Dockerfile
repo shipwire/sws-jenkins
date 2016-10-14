@@ -6,7 +6,8 @@ MAINTAINER nick.maiorsky@shipwire.com
 USER root
 
 RUN apt-get update \
-    && apt-get install -y automake gcc make gcc-multilib zlib1g-dev libssl-dev
+    && apt-get install -y automake gcc make gcc-multilib zlib1g-dev libssl-dev \
+    && apt-get install -y man python-virtualenv openssh-client python python-pip vim
 
 # Taken from Ruby Docker file. I need the tools on my jenkins instance and not of the slave
 # skip installing gem documentation
@@ -81,13 +82,6 @@ ENV PYTHONIOENCODING=UTF-8
 # ssh allows us to log in to new instances
 # vim is useful to write shell scripts
 # python* is needed to install aws cli using pip install
-
-RUN apt-get install -y \
-    man \
-    openssh-client \
-    python \
-    python-pip \
-    vim
 
 RUN adduser --disabled-login --gecos '' aws
 WORKDIR /home/aws

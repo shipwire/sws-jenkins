@@ -6,7 +6,7 @@ MAINTAINER nick.maiorsky@shipwire.com
 USER root
 
 RUN apt-get update \
-    && apt-get install -y automake gcc make gcc-multilib zlib1g-dev libssl-dev \
+    && apt-get install -y automake gcc make gcc-multilib zlib1g-dev libssl-dev mysql-client \
     && apt-get install -y man python-virtualenv openssh-client python python-pip vim
 
 # Taken from Ruby Docker file. I need the tools on my jenkins instance and not of the slave

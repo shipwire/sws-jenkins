@@ -1,5 +1,5 @@
-FROM jenkins:latest
-MAINTAINER nick.maiorsky@shipwire.com
+FROM jenkins:1.651.3
+MAINTAINER nicolay.maiorsky@ingrammicro.com
 
 # Autoconfig is needed
 
